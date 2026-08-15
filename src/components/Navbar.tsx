@@ -9,7 +9,8 @@ import {
   Wifi,
   WifiOff,
   CloudUpload,
-  Layers
+  Layers,
+  Users
 } from "lucide-react";
 import { StorageMode } from "../types";
 import { formatDateTime } from "../utils/helpers";
@@ -46,6 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: "office", label: "辦公室內勤", icon: Building2, desc: "標準班表與工時" },
     { id: "field", label: "外勤專案簽到", icon: MapPin, desc: "GPS雷達與日誌" },
     { id: "leave", label: "請假加班登記", icon: CalendarCheck, desc: "假單與加班核算" },
+    { id: "employees", label: "人員組織管理", icon: Users, desc: "名冊與新增刪減" },
     { id: "admin", label: "管理出勤看板", icon: LayoutDashboard, desc: "即時KPI與CSV導出" },
     { id: "server", label: "本機主機設定", icon: Server, desc: "REST與離線同步" }
   ];
@@ -71,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </span>
                 </div>
                 <p className="text-xs text-slate-400 font-normal">
-                  單頁自主掌控架構 • 零雲端訂閱費用 • 支援桌機與行動裝置
+                  單頁自主掌控架構 • 零雲端訂閱費用 • 支援桌機、獨立視窗與行動裝置
                 </p>
               </div>
             </div>

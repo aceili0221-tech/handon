@@ -1,4 +1,4 @@
-import { AttendanceLog } from "../types";
+import { AttendanceLog, Employee } from "../types";
 
 export function formatDateTime(dateObj: Date = new Date()) {
   const year = dateObj.getFullYear();
@@ -94,6 +94,61 @@ export function exportAttendanceCSV(logs: AttendanceLog[], filenamePrefix = "Att
   ].join("\r\n");
 
   // Add UTF-8 BOM header (\uFEFF) to guarantee Excel in Traditional Chinese / Windows displays without garbled text!
+  const blob = new Blob(["\uFEFF" + csvContent], {
+    type: "text/csv;charset=utf-8;"
+  });
+
+  const now = new Date();
+  const timestamp = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(now.getDate()).padStart(2, "0")}_${String(now.getHours()).padStart(2, "0")}${String(now.getMinutes()).padStart(2, "0")}${String(now.getSeconds()).padStart(2, "0")}`;
+  const filename = `${filenamePrefix}_${timestamp}.csv`;
+
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.setAttribute("href", url);
+  link.setAttribute("download", filename);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
+
+/**
+ * Exports employees list as a UTF-8 BOM CSV string and triggers browser download
+ */
+export function exportEmployeesCSV(employees: Employee[], filenamePrefix = "Employee_Roster") {
+  const headers = [
+    "員工編號 (ID)",
+    "員工姓名",
+    "所屬部門",
+    "職稱角色",
+    "上班班別",
+    "聯絡電話",
+    "電子郵件",
+    "代表顏色"
+  ];
+
+  const escapeCSV = (str: string | undefined | null) => {
+    if (!str) return '""';
+    const clean = String(str).replace(/"/g, '""').replace(/\r?\n/g, " ");
+    return `"${clean}"`;
+  };
+
+  const rows = employees.map((emp) => [
+    escapeCSV(emp.id),
+    escapeCSV(emp.name),
+    escapeCSV(emp.dept),
+    escapeCSV(emp.role),
+    escapeCSV(emp.shift),
+    escapeCSV(emp.phone),
+    escapeCSV(emp.email),
+    escapeCSV(emp.avatarBg)
+  ]);
+
+  const csvContent = [
+    headers.join(","),
+    ...rows.map((row) => row.join(","))
+  ].join("\r\n");
+
   const blob = new Blob(["\uFEFF" + csvContent], {
     type: "text/csv;charset=utf-8;"
   });

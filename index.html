@@ -1,18 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-TW" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-    <meta name="description" content="An application built with Google AI Studio." />
-    <meta property="og:title" content="My Google AI Studio App" />
-    <meta property="og:description" content="An application built with Google AI Studio." />
+    <title>企業內部出勤與工時打卡系統</title>
+    <meta name="description" content="企業內部出勤與工時打卡系統，具備辦公室內勤打卡、外勤GPS雷達案場簽到、請假加班登記、人員組織管理、管理看板數據圖表、無亂碼CSV匯出與離線同步。" />
+    <meta property="og:title" content="企業內部出勤與工時打卡系統" />
+    <meta property="og:description" content="企業內部出勤與工時打卡系統，支援本地桌面瀏覽器執行、Electron 獨立視窗應用、離線快取與同區網行動裝置打卡。" />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
   </head>
-  <body>
+  <body class="bg-slate-950 text-slate-100 antialiased min-h-screen selection:bg-blue-500 selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

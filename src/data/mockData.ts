@@ -9,7 +9,10 @@ export const MOCK_EMPLOYEES: Employee[] = [
     avatarBg: "bg-blue-600",
     shift: "09:00 - 18:00 (彈性 30m)",
     phone: "0912-345-678",
-    email: "chehao.chang@company.internal"
+    email: "chehao.chang@company.internal",
+    status: "active",
+    joinDate: "2023/04/01",
+    notes: "負責公司內部系統架構與雲端伺服器維運。"
   },
   {
     id: "EMP-002",
@@ -19,7 +22,10 @@ export const MOCK_EMPLOYEES: Employee[] = [
     avatarBg: "bg-emerald-600",
     shift: "08:30 - 17:30 (責任制)",
     phone: "0923-456-789",
-    email: "chiaying.lin@company.internal"
+    email: "chiaying.lin@company.internal",
+    status: "active",
+    joinDate: "2023/08/15",
+    notes: "負責台北信義 A11 與新竹科學園區案場進度查驗。"
   },
   {
     id: "EMP-003",
@@ -29,7 +35,10 @@ export const MOCK_EMPLOYEES: Employee[] = [
     avatarBg: "bg-amber-600",
     shift: "09:00 - 18:00 (外勤彈性)",
     phone: "0934-567-890",
-    email: "kuanyu.chen@company.internal"
+    email: "kuanyu.chen@company.internal",
+    status: "active",
+    joinDate: "2022/11/01",
+    notes: "負責全省大客戶合約洽談與專案開發。"
   },
   {
     id: "EMP-004",
@@ -39,7 +48,10 @@ export const MOCK_EMPLOYEES: Employee[] = [
     avatarBg: "bg-purple-600",
     shift: "09:00 - 18:00 (標準班)",
     phone: "0945-678-901",
-    email: "yating.wang@company.internal"
+    email: "yating.wang@company.internal",
+    status: "active",
+    joinDate: "2024/01/10",
+    notes: "統籌企業人資管理、考核、出勤假單核定。"
   },
   {
     id: "EMP-005",
@@ -49,7 +61,10 @@ export const MOCK_EMPLOYEES: Employee[] = [
     avatarBg: "bg-rose-600",
     shift: "08:00 - 17:00 (案場巡檢)",
     phone: "0956-789-012",
-    email: "chunjieh.huang@company.internal"
+    email: "chunjieh.huang@company.internal",
+    status: "leave",
+    joinDate: "2024/05/02",
+    notes: "負責甲種職安督導巡查，今日請假中。"
   },
   {
     id: "EMP-006",
@@ -59,7 +74,10 @@ export const MOCK_EMPLOYEES: Employee[] = [
     avatarBg: "bg-indigo-600",
     shift: "09:00 - 18:00 (標準班)",
     phone: "0967-890-123",
-    email: "peishan.hsu@company.internal"
+    email: "peishan.hsu@company.internal",
+    status: "active",
+    joinDate: "2024/02/20",
+    notes: "掌理日常會計出納與各工項請款覆核。"
   }
 ];
 

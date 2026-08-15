@@ -28,6 +28,7 @@ interface AdminDashboardProps {
   attendanceLogs: AttendanceLog[];
   onDeleteLog: (id: string) => void;
   onRefreshData?: () => void;
+  onNavigateToEmployees?: () => void;
   onAddToast: (toast: { type: "success" | "warning" | "error" | "info"; title: string; message: string }) => void;
 }
 
@@ -36,6 +37,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   attendanceLogs,
   onDeleteLog,
   onRefreshData,
+  onNavigateToEmployees,
   onAddToast
 }) => {
   const [filterType, setFilterType] = useState<string>("all");
@@ -193,8 +195,19 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
           </p>
         </div>
 
-        {/* Top Buttons: Refresh & Export CSV */}
-        <div className="flex items-center gap-2">
+        {/* Top Buttons: Personnel Management, Refresh & Export CSV */}
+        <div className="flex flex-wrap items-center gap-2">
+          {onNavigateToEmployees && (
+            <button
+              onClick={onNavigateToEmployees}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 hover:text-white border border-blue-500/40 text-xs font-semibold transition cursor-pointer shadow-sm"
+              title="前往人員組織與名冊管理區塊"
+            >
+              <Users className="w-3.5 h-3.5" />
+              <span>人員組織管理 ({employees.length})</span>
+            </button>
+          )}
+
           {onRefreshData && (
             <button
               onClick={onRefreshData}

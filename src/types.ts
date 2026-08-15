@@ -25,6 +25,8 @@ export interface AttendanceLog {
   synced?: boolean;
 }
 
+export type EmploymentStatus = "active" | "leave" | "wfh" | "business_trip" | "resigned";
+
 export interface Employee {
   id: string;
   name: string;
@@ -34,6 +36,9 @@ export interface Employee {
   shift: string;
   phone: string;
   email: string;
+  status?: EmploymentStatus; // 在職狀況: active(在職中), leave(休假請假), wfh(居家遠端), business_trip(公差出差), resigned(已除名/離職)
+  notes?: string; // 在職狀況說明 / 備註
+  joinDate?: string; // 到職日期
 }
 
 export interface ProjectSite {
