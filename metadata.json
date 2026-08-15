@@ -1,0 +1,7 @@
+{
+  "name": "企業內部出勤與工時打卡系統",
+  "description": "企業內部出勤與工時打卡系統，具備辦公室內勤打卡、外勤GPS雷達案場簽到、請假加班登記、管理看板數據圖表、無亂碼CSV匯出與離線同步。",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
